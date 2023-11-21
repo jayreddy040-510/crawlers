@@ -1,4 +1,5 @@
 import os
+import time
 from dotenv import load_dotenv
 from selenium import webdriver
 from selenium.webdriver.common.by import By
@@ -32,4 +33,5 @@ sign_in_button.click()
 driver.get(linkedin_jobs_url)
 
 
-driver.quit()
+time.sleep(3600)
+# driver.quit()
