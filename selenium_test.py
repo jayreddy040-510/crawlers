@@ -9,6 +9,7 @@ load_dotenv()
 # Retrieve credentials from environment variables
 username = os.environ.get('LINKEDIN_USER')
 password = os.environ.get('LINKEDIN_PW')
+linkedin_jobs_url = os.environ.get('LINKEDIN_JOBS_URL')
 
 # Initialize the WebDriver (Chrome in this case)
 driver = webdriver.Chrome()
@@ -35,10 +36,7 @@ sign_in_button.click()
 time.sleep(5)
 
 # Navigate to the 'Jobs' section
-jobs_link = driver.find_element(
-    By.XPATH, '//a[@data-test-global-nav-link="jobs"]')
-jobs_link.click()
-
+driver.get(linkedin_jobs_url)
 # Add additional code here to interact with the jobs page
 
 # Close the browser after a delay
